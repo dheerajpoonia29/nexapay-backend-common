@@ -1,19 +1,19 @@
 docker init // use only once
 // update compose.yaml file add dependent services
 docker compose up // build image, create container if not exist, start container
-docker-compose up -d // keep running docker container in background
-docker-compose down // stop docker container
+docker compose up -d // keep running docker container in background // -d keep running in background
+docker compose down // stop docker container
 docker ps // get list of running container
 
 
 // docker build and update
 mvn clean package
-docker-compose build
-docker-compose up -d
+docker compose build
+docker compose up -d
 
 
 // start a particular container
-docker-compose up -d mysql
+docker compose mysql up -d
 
 
 // search network name of [nexapay-bank-backend]
