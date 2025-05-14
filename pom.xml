@@ -35,4 +35,21 @@
       <version>6.1.12</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- This plugin helps define the entry point -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.nexapay.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

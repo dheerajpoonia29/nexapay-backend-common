@@ -1,0 +1,30 @@
+docker init // use only once
+// update compose.yaml file add dependent services
+docker compose up // build image, create container if not exist, start container
+docker-compose up -d // keep running docker container in background
+docker-compose down // stop docker container
+docker ps // get list of running container
+
+
+// docker build and update
+mvn clean package
+docker-compose build
+docker-compose up -d
+
+
+// start a particular container
+docker-compose up -d mysql
+
+
+// search network name of [nexapay-bank-backend]
+docker network ls
+
+// start [nexapay-user-backend] which is dependent on [nexapay-bank-backend > mysql-container]
+docker run -d \
+  --name backend-container-2 \
+  --network nexapay-bank-backend_app-network \
+  -e DATABASE_URL=jdbc:mysql://mysql-container:3306/nexapay \
+  -e DATASOURCE_USERNAME=root \
+  -e DATASOURCE_PASSWORD=root1234 \
+  -p 8081:8081 \
+  nexapay-user-backend-image
