@@ -2,4 +2,4 @@ mvn clean package
 export DATABASE_URL=jdbc:mysql://localhost:3306/nexapay
 export DATASOURCE_USERNAME=root
 export DATASOURCE_PASSWORD=root1234
-java -jar target/nexapay-bank-backend-0.0.1-SNAPSHOT.jar
+java -jar target/nexapay-backend-common-0.0.1-SNAPSHOT.jar

@@ -1,10 +1,7 @@
 package com.nexapay.dto.request;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.AllArgsConstructor;
+import com.nexapay.helper.TransactionType;
+import lombok.*;
 
 @Getter
 @Setter
@@ -12,9 +9,9 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionRequest {
-    private String fromAccountNo;
-
-    private String toAccountNo;
+    private String accountNo;
 
     private long amount;
+
+    private TransactionType transactionType;
 }

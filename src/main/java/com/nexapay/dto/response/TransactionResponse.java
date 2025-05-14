@@ -1,11 +1,6 @@
 package com.nexapay.dto.response;
 
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.AllArgsConstructor;
+import lombok.*;
 
 import java.sql.Timestamp;
 
@@ -17,15 +12,11 @@ import java.sql.Timestamp;
 public class TransactionResponse {
     private Long transactionId;
 
-    private String fromAccountNo;
-
-    private String toAccountNo;
+    private String accountNo;
 
     private long amount;
 
     private Timestamp date;
 
     private Boolean status;
-
-    private String statusInfo;
 }
