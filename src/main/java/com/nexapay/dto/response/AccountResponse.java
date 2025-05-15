@@ -16,13 +16,5 @@ public class AccountResponse {
 
     private long balance;
 
-    private int userId;
-
-    public AccountResponse toResponse() {
-        return AccountResponse.builder()
-                .accountNo(this.accountNo)
-                .balance(this.balance)
-                .userId(this.userId)
-                .build();
-    }
+    private BankResponse bankData;
 }

@@ -1,0 +1,33 @@
+package com.nexapay.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "account_table")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class AccountEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false, unique = true)
+    private String accountNo;
+
+    @Column(nullable = false)
+    private long balance;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bank_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
+    private BankEntity bank;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @ToString.Exclude
+    private UserEntity user;
+}

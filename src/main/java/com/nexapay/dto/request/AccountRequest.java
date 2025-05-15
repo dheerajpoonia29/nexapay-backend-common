@@ -14,6 +14,8 @@ import lombok.AllArgsConstructor;
 public class AccountRequest {
     private UserRequest userRequest;
 
+    private BankRequest bankRequest;
+
     private String accountNo;
 
     private long balance;

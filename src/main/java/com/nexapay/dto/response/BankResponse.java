@@ -1,20 +1,23 @@
 package com.nexapay.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.nexapay.helper.BankBranch;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserResponse {
-    private String name;
+public class BankResponse {
+    private Integer id;
 
-    private String email;
+    private String name;
 
     @JsonIgnore
     private String password;
 
-    private AccountResponse accountData;
+    private List<BankBranch> branches;
 }
