@@ -12,11 +12,13 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountRequest {
-    private UserRequest userRequest;
-
-    private BankRequest bankRequest;
-
     private String accountNo;
 
     private long balance;
+
+    private String ifscCode;
+
+    private UserRequest userRequest;
+
+    private BankRequest bankRequest;
 }

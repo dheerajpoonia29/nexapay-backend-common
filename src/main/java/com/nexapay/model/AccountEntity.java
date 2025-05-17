@@ -21,6 +21,9 @@ public class AccountEntity {
     @Column(nullable = false)
     private long balance;
 
+    @Column(nullable = false)
+    private String ifscCode;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bank_id", referencedColumnName = "id", nullable = false)
     @ToString.Exclude

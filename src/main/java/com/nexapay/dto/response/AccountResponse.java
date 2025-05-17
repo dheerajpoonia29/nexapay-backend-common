@@ -16,5 +16,7 @@ public class AccountResponse {
 
     private long balance;
 
+    private String ifscCode;
+
     private BankResponse bankData;
 }
