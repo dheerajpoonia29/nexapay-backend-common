@@ -10,6 +10,9 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class BankBranch {
+    @Column(unique = true)
     private String branchName;
+
+    @Column(unique = true)
     private String ifscCode;
 }

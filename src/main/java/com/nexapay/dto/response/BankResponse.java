@@ -2,6 +2,7 @@ package com.nexapay.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.nexapay.helper.BankBranch;
+import com.nexapay.model.BankEntity;
 import lombok.*;
 
 import java.util.List;
@@ -20,4 +21,11 @@ public class BankResponse {
     private String password;
 
     private List<BankBranch> branches;
+
+    public BankEntity toEntity() {
+        return BankEntity.builder()
+                .id(this.id)
+                .name(this.name)
+                .branches(this.getBranches()).build();
+    }
 }
