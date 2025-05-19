@@ -42,6 +42,11 @@ INSERT INTO bank_branch_table (bank_id, branch_name, ifsc_code) VALUES
 (1, 'gajsinghpur', 'hdfc001'),
 (1, 'raisinghnagar', 'hdfc002');
 
+INSERT INTO bank_table (name, password) VALUES ('Pnb Bank', '123');
+INSERT INTO bank_branch_table (bank_id, branch_name, ifsc_code) VALUES
+(2, 'amritsar', 'pnb001'),
+(2, 'karnal', 'pnb002');
+
 
 DELETE FROM bank_branch_table WHERE bank_id = 2;
 DELETE FROM bank_table WHERE id = 2;

@@ -3,6 +3,8 @@ package com.nexapay.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "account_table")
 @Getter
@@ -33,4 +35,7 @@ public class AccountEntity {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ToString.Exclude
     private UserEntity user;
+
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CashFlowEntity> cashFlows;
 }
