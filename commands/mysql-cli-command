@@ -9,7 +9,7 @@ mysql> show databases;
 mysql> create database nexapay;
 mysql> use nexapay;
 mysql> show tables;
-mysql> select * from transaction_table;
+mysql> select * from bank_table;
 
 
 // list all mysql instance running
