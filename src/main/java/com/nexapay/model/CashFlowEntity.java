@@ -1,5 +1,6 @@
 package com.nexapay.model;
 
+import com.nexapay.dto.response.CashFlowResponse;
 import com.nexapay.helper.CashFlowStatus;
 import com.nexapay.helper.CashFlowType;
 import jakarta.persistence.*;
@@ -42,6 +43,12 @@ public class CashFlowEntity {
     @Column(nullable = false)
     private Timestamp requestedDate;
 
+    @Column(nullable = false)
+    private String userEmail;
+
+    @Column(nullable = false)
+    private String accountNo;
+
     @ManyToOne
     @JoinColumn(name = "account_id", nullable = false)
     private AccountEntity account;
@@ -60,5 +67,21 @@ public class CashFlowEntity {
     @PreUpdate
     protected void onUpdate() {
         this.lastUpdateDate = new Timestamp(System.currentTimeMillis());
+    }
+
+    public CashFlowResponse toResponse() {
+        return CashFlowResponse.builder()
+                .transactionId(this.transactionId)
+                .amount(this.amount)
+                .cashFlowType(this.cashFlowType)
+                .cashFlowStatus(this.cashFlowStatus)
+                .cashFlowStatusMsg(this.getCashFlowStatusMsg())
+                .lastUpdateDate(this.lastUpdateDate)
+                .requestedDate(this.requestedDate)
+                .userEmail(this.userEmail)
+                .accountNo(this.accountNo)
+                // todo write
+                .account(null)
+                .bank(null).build();
     }
 }

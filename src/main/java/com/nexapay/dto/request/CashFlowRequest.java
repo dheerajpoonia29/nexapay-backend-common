@@ -12,4 +12,5 @@ public class CashFlowRequest {
     private long amount;
     CashFlowType cashFlowType;
     private String accountNo;
+    private String userEmail;
 }

@@ -19,6 +19,8 @@ public class CashFlowResponse {
     String cashFlowStatusMsg;
     private Timestamp lastUpdateDate;
     private Timestamp requestedDate;
+    private String userEmail;
+    private String accountNo;
     private AccountResponse account;
     private BankResponse bank;
 }
